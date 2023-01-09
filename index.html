@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div id="nav__collapse">
+        <div id="nav__collapse__header">
+
+            <ul class="nav__collapse__header__left">
+                <li>
+                    <a href="/">
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <span>Tax Finalization</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <span>Calendar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <span>Working Timesheet</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <span>Appraisals</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <span>Project</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <span>Timesheets</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <span>Employees</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <span>Assets</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <span>Helpdesk</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <span>Personal Info</span>
+                    </a>
+                </li>
+                <li class=" menu_more">
+                    <a href="/">
+                        <span>More</span> <span><i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav__collapse__header__right">
+                <div>
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <div>
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="nav__collapse__header__right__user">
+                    <img class="nav__collapse__header__right__user__img"
+                        src="https://opms.ntq.solutions/web/image?model=hr.employee&field=image_medium&id=4708&unique="
+                        alt="">
+                    <span class="nav__collapse__header__right__user__name">Bạch Trung Đàn </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="main">
+            <div class="content">
+
+                <div class="content__left">
+                    <div class="content__left__img">
+                        <img src="https://opms.ntq.solutions/web/binary/company_logo?db=opms11&company=1" alt="NMH">
+                    </div>
+                    <div class="content__left__list">
+                        <p>Employees</p>
+                        <ul>
+                            <li style="background: #7c7bad;color: white;padding: 10px 3px;margin: 0;">Employees</li>
+                            <li>Adjust Employees</li>
+                            <li>Members birthday</li>
+                        </ul>
+                        <p>Departments</p>
+                        <p>Termination Request</p>
+                    </div>
+
+                </div>
+
+                <div class="content__right">
+                    <div class="content__right__panel">
+                        <div class="employess">
+                            <div class="employess__box">
+                                <div class="employess__searchview">
+                                    <div class="search">
+                                        <input type="text" id="employess__input" placeholder="Search...">
+                                        <span class="employess__search">
+                                            <i onclick="search()" class="fa-solid fa-magnifying-glass-plus"></i>
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="sort">
+                                    <button class="employess__filter">
+                                        <option onclick="sortAZ()" value="">A-Z</option>
+                                        <!-- <option onclick="sortZA()" value="">Z-A</option> -->
+
+                                    </button>
+                                    <button class="employess__filter">
+                                        <option onclick="sortZA()" value="">Z-A</option>
+
+                                    </button>
+
+                                    <!-- <button onclick="sortAZ()">a-z</button>
+                                        <button onclick="sortZA()">z-a</button> -->
+
+                                    <span style="font-size: 13px;">40</span>/<span style="font-size: 13px;">160</span>
+
+                                    <button style="border: 1px solid rgba(0, 0, 0, 0.185);padding: 3px 15px;"
+                                        onclick="startPage()">
+                                        < </button>
+                                            <button style="border: 1px solid rgba(0, 0, 0, 0.185);padding: 3px 15px;"
+                                                onclick="endPage()"> > </button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="employess__add">
+                            <!-- <input class="addName" type="text" placeholder="name...">
+                                <input class="addEmail" type="text" placeholder="email...">
+                                <input class="addJob" type="text" placeholder="job...">  -->
+                            <button id="myBtn" onclick="add()">add</button>
+                        </div>
+                    </div>
+
+                    <div class="content__right__detail">
+                        <div class="content__right__detail__product">
+
+                            <!-- <div class="information_item">
+                                    <div class="kanban_image">
+                                        <img src="./assets/img/img.jpg" alt="">
+                                        <div class="kanban_icons">
+                                            <span class="kanban_messages">
+                                                <i class="fas fa-comments"></i>
+                                            </span>
+                                            <span class="kanban_followers">
+                                                <i class="fas fa-cloud-meatball"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <div class="kanban_detail">
+    
+                                            <div class="kanban_record-top">
+                                                <div class="kanban_record-title">
+    
+                                                    Bạch Đàn
+                                                </div>
+                                                <li>Developer</li>
+                                            </div>
+                                            <div id="orders-view">
+                                                <div id="data"></div>
+                                            </div>
+                                            <ul class="kanban_information">
+                                                <li>
+                                                    <i class="fas fa-envelope"></i>
+                                                    <span>dan.bach@ntqsolution.com.vn</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Add employee</h1>
+            <input class="addName" type="text" placeholder="name..."><br>
+            <input class="addEmail" type="text" placeholder="email..."><br>
+            <input class="addJob" type="text" placeholder="job..."> <br>
+            <button onclick="add()">add</button>
+        </div>
+
+    </div>
+    <button></button>
+
+
+
+</body>
+<script src="./index.js"></script>
+<script src="./removeVietnameseTones.js"></script>
+<!-- <script src="./mock_data.js"></script> -->
+
+</html>
