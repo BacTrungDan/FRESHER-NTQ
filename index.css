@@ -1,0 +1,460 @@
+:root {
+    --bg-color-header: #222222;
+    --bg-color-panel: #f9f9f9;
+    --bg-color-img: #f9f9f9;
+    --bg-color-name: #466b8d;
+    --bg-color-timesheet: #DE889D;
+    --bg-color-request: #D9A883;
+    --bg-color-overtime: #B593EB;
+    --bg-color-notification: cadetblue;
+    --bg-color-leave: #AECDF9;
+    --bg-color-meethead: #87CEEB;
+    --bg-color-birthday: #AFDBA9;
+
+    --height-header: 32px;
+    --height-panel: 56px;
+    --height-sumpanel: 88px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+
+/* HEADER CSS */
+
+#nav__collapse__header {
+    background-color: var(--bg-color-header);
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid transparent;
+    position: relative;
+    border-color: #080808;
+    padding-right: 16px;
+    padding-left: 16px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 6;
+    min-height: 32px;
+    overflow: hidden;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.nav__collapse__header__left {
+    white-space: nowrap;
+    display: flex;
+    color: #9d9d9d;
+    z-index: 200;
+}
+
+.navbar__info .navbar__info--name:hover,
+.nav__collapse__header__left li:hover a {
+    color: #ffffff;
+}
+
+.nav__collapse__header__left li {
+    font-size: 1.3rem;
+    padding: 7px 8px;
+    margin-top: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav__collapse__header__right {
+    font-size: 1.3rem;
+    padding: 4px 8px;
+    color: #9d9d9d;
+    display: flex;
+    margin-right: -16px;
+    cursor: pointer;
+
+}
+
+.nav__collapse__header__right div :hover {
+    opacity: 1;
+    color: #fffffff1;
+}
+
+.nav__collapse__header__right div {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    margin-right: 1.7rem;
+    opacity: 0.6;
+}
+
+.nav__collapse__header__right__user__img {
+    width: 1.8rem;
+    max-height: 1.8rem;
+    border-radius: 50%;
+    margin-right: 4px;
+    object-fit: cover;
+}
+
+.nav__collapse__header__right__user__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    max-width: 150px;
+}
+
+
+/* MAIN CSS */
+
+.content {
+    flex: 1 1 auto;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    min-height: 1px;
+    top: var(--height-header);
+    bottom: 0;
+}
+
+
+/* content__left */
+
+.content__left {
+    padding: 0px;
+    height: 100%;
+    background-color: var(--bg-color-img);
+    position: fixed;
+    top: var(--height-header);
+    z-index: 999;
+    width: 220px;
+    height: 100vh;
+    border-right: 1px solid #c6c6c6;
+
+}
+
+.content__left__img {
+    width: 100%;
+    padding: 20px;
+
+}
+
+.content__left__list li {
+    font-size: 13px;
+    list-style: none;
+    margin: 10px
+}
+
+.content__left__list p {
+    font-size: 13px;
+    margin: 10px 0px;
+    color: #7c7bad;
+    font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
+    padding: 10px 5px;
+}
+
+
+/* content__right */
+
+.content__right__panel {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100px;
+    width: 100%;
+    background-color: var(--bg-color-panel);
+    right: 0;
+    position: fixed;
+    z-index: 300;
+    padding-top: 10px;
+    padding-right: 16px;
+    padding-left: 236px;
+    margin-left: 100px;
+    padding-bottom: 10px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.employess {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    justify-content: end
+}
+
+.employess__box {
+    width: 50%;
+    margin: 0;
+    display: flex;
+}
+
+.employess__box:nth-child(1) {
+    display: inline-block;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    color: #777777;
+    font-size: 1.8rem;
+}
+
+.employess__searchview {
+    width: 85%;
+    position: relative;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 50px;
+    margin-top: 9px;
+
+}
+
+.search {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    line-height: 30px;
+}
+
+.sort {
+    margin-top: 7px;
+    margin-left: 50px;
+}
+
+#employess__input {
+    width: 100%;
+    border: none;
+    padding: 8px;
+    font-size: 1.3rem;
+    color: rgb(76, 76, 76);
+}
+
+.employess__search {
+    position: absolute;
+    left: auto;
+    bottom: auto;
+    right: 5px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.employess__filter {
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    padding: 4px 15px;
+    /* margin-left: 15px; */
+    /* display: flex; */
+}
+
+.employess__add {
+    margin-top: -60px;
+}
+
+.employess__add input {
+    background: #ffffff;
+    padding: 7px 3px;
+    margin: -7px 5px;
+    border: 1px solid rgba(0, 0, 0, 0.164);
+    border-radius: 5px;
+
+}
+
+.employess__add button {
+    background: rgba(128, 128, 128, 0.616);
+    padding: 4px 20px;
+    border-radius: 2px;
+    margin-left: 255px;
+    margin-top: 15px;
+
+}
+
+.employess__add button:hover {
+    background: rgba(128, 128, 128, 0.219);
+}
+
+
+
+/* MAIN CSS */
+
+.content__right {
+    width: 100%;
+    z-index: 200;
+    position: relative;
+    padding-left: 220px;
+    bottom: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.content__right__detail {
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.content__right__detail__product {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.manager_items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 8px 8px;
+
+}
+
+.information_item {
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.089);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #ffffff;
+    font-size: 12px;
+    display: flex;
+    position: relative;
+}
+
+.kanban_record-title {
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.kanban_record-top li {
+    padding: 3px 0px;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.kanban_image__img {
+    padding: 10px;
+    border-radius: 50%;
+    background: #7c7bad;
+    color: white;
+    font-size: 35px;
+    margin: 8px;
+}
+
+.kanban_icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kanban_messages {
+    margin-left: 12px;
+    margin-bottom: 5px;
+}
+
+.kanban_detail {
+    padding: 5px;
+}
+
+.kanban_button button {
+    background: #7c7bad;
+    padding: 8px 15px;
+    color: white;
+}
+
+.kanban_button2{
+    padding: 6px 10px;
+    background: #7c7bad;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: white;
+    margin: 5px;
+    
+}
+
+.kanban_button2:hover{
+    background: #4d4c6b;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h1 {
+    margin: 10px 0px;
+}
+
+.modal-content input {
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    padding: 6px 20px;
+    width: 70%;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.modal-content button {
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 3px;
+    padding: 5px 20px;
+    margin: 10px;
+    background: #888;
+}
