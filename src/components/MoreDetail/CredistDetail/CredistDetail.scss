@@ -1,0 +1,41 @@
+.container{
+  margin-top: 250px;
+  margin-left: 50px;
+  width: 70%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+  // z-index: 1000px;
+}
+
+.container h4{
+  margin: 20px 0px ;
+}
+.card {
+  float: left;
+  width: 33.333% ;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 1px solid black;
+  margin: 10px ;
+  
+}
+
+.card  img {
+  margin-bottom: .75rem;
+ 
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+.icon{
+ justify-content: space-between;
+ white-space: nowrap;
+}
+
+.icon img{
+  width: 30px;
+  height: 30px;
+  margin: 0px 10px;
+ 
+}
